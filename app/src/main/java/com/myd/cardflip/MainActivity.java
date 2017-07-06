@@ -59,4 +59,13 @@ public class MainActivity extends AppCompatActivity
                     .commit();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().popBackStackImmediate()) {
+            showingBack = false;
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
